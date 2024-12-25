@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* header */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: white;
+  padding: 20px 30px;
+  height: 100px;
+}
+nav .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+nav .display-5 {
+  text-decoration: none;
+  color: black;
+  font-weight: 800;
+  font-family: 'Libre Baskerville';
+}
+.navbar-nav .nav-link {
+  font-size: 20px;
+  font-weight: 700;
+}
+.navbar-nav .nav-link.active {
+  padding: 10px;
+  border-bottom:  5px solid black;
+}
+.navbar-toggler {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  outline: none;
+}
+#home {
+  text-align: left;
+  font-family: 'Libre Baskerville';
+}
+.see-more-btn {
+  cursor: pointer; 
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+#home h5, #home h4, a {
+  font-family: 'Karla', 'Times New Roman', Times, serif;
+}
+.socials-link {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 200px;
+  margin: 10px 0;
+}
+.socials-link a {
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+}
+#about {
+  text-align: left;
+  font-family: 'Libre Baskerville';
+  padding: 40px;
+}
+#about .content, #projects .content {
+  font-family: 'Karla', 'Times New Roman', Times, serif;
+  font-size: 20px;
+  text-align: justify;
+}
+#about .techstacks {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 80px;
+}
+.display-4 {
+  font-family: 'Libre Baskerville';
+  font-weight: 800;
+}
+#contact .content {
+  font-family: 'Karla', 'Times New Roman', Times, serif;
+  font-size: 20px;
+  text-align: justify;
+}
+
+.contact-information {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  margin: 0 auto;
+}
+.contact-information a {
+  color: black;
+  text-decoration: none;
+  align-items: center;
+}
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: white;
+  padding: 50px 50px;
+  background-color: black;
+}
+
+.socials-container, .socials-container a {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 50%;
+  max-width: 200px;
+  margin: 10px 0;
+  color: white;
+}
