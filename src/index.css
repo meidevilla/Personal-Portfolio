@@ -15,6 +15,9 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  color: black;
+}
 /* header */
 header {
   position: sticky;
@@ -24,11 +27,11 @@ header {
   padding: 20px 30px;
   height: 100px;
 }
-nav .container {
+/* nav .container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
+} */
 nav .display-5 {
   text-decoration: none;
   color: black;
@@ -43,21 +46,84 @@ nav .display-5 {
   padding: 10px;
   border-bottom:  5px solid black;
 }
-.navbar-toggler {
+.navbar-toggler, .navbar-toggler:focus, .navbar-toggler:active {
   border: none;
   background-color: transparent;
-  padding: 0;
   outline: none;
+  box-shadow: none;
+  color: black;
 }
+
 #home {
   text-align: left;
   font-family: 'Libre Baskerville';
 }
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 .see-more-btn {
-  cursor: pointer; 
   text-decoration: none;
-  color: black;
+  color: #333;;
+  cursor: pointer;
   font-size: 18px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  width: 240px;
+  font-family: 'Karla', 'Times New Roman', Times, serif;
+}
+.see-more-btn:hover {
+  font-weight: 900;
+  text-transform: uppercase;
+  color: black;
+  text-decoration: underline;
+}
+
+.see-more-btn > svg {
+  width: 34px;
+  margin-left: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.see-more-btn:hover svg {
+  transform: translateX(5px);
+}
+
+.display-4 {
+  font-family: 'Libre Baskerville';
+  font-weight: 800;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes colorShift {
+  0% {
+    color: #0c0b0b;
+  }
+  50% {
+    color: #293a29;
+  }
+  100% {
+    color: #000000;
+  }
+}
+
+#about .display-4, #projects .display-4, #contact .display-4 {
+  animation: slideInFromLeft 2s linear, colorShift 10s linear infinite;
 }
 
 #home h5, #home h4, a {
@@ -74,7 +140,14 @@ nav .display-5 {
   text-decoration: none;
   cursor: pointer;
   color: black;
+  transition: transform 0.3s ease; /* Smooth transition */
 }
+
+.socials-link a:hover {
+  transform: scale(1.2);
+  color: #080808;
+}
+
 #about {
   text-align: left;
   font-family: 'Libre Baskerville';
@@ -84,6 +157,7 @@ nav .display-5 {
   font-family: 'Karla', 'Times New Roman', Times, serif;
   font-size: 20px;
   text-align: justify;
+  animation: slideInFromLeft 2s linear;
 }
 #about .techstacks {
   display: flex;
@@ -91,14 +165,11 @@ nav .display-5 {
   gap: 10px;
   font-size: 80px;
 }
-.display-4 {
-  font-family: 'Libre Baskerville';
-  font-weight: 800;
-}
 #contact .content {
   font-family: 'Karla', 'Times New Roman', Times, serif;
   font-size: 20px;
   text-align: justify;
+  animation: slideInFromLeft 2s linear;
 }
 
 .contact-information {
@@ -111,6 +182,10 @@ nav .display-5 {
   color: black;
   text-decoration: none;
   align-items: center;
+}
+.contact-information a:hover {
+  text-decoration: underline;
+  font-weight: 700;
 }
 footer {
   display: flex;
@@ -129,4 +204,7 @@ footer {
   max-width: 200px;
   margin: 10px 0;
   color: white;
+}
+.socials-container a:hover {
+  scale: 1.2;
 }
