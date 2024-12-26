@@ -187,6 +187,39 @@ nav .display-5 {
   text-decoration: underline;
   font-weight: 700;
 }
+
+.card {
+  height: 380px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card > img {
+  width: 100%;
+  object-fit: cover;
+}
+.card-body {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding: 30px;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  color: white;
+  text-align: justify;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card:hover .card-body {
+  opacity: 1; /* Show content when card is hovered */
+}
+
 footer {
   display: flex;
   flex-direction: row;
