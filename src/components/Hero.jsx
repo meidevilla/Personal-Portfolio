@@ -15,7 +15,7 @@ const Hero = () => {
                         <span className='fw-bold me-2'>ABOUT ME</span>
                         <FaArrowRight size={15} />
                     </a>
-                    <a className="get-resume-btn mb-2" href="/public/resume.pdf" download>
+                    <a className="get-resume-btn mb-2" href="/resume.pdf" download>
                         <IoMdDownload size={20} />
                         <span className='fw-bold ms-2'>GET RESUME </span>
                     </a>
