@@ -16,44 +16,88 @@ html {
 }
 
 body {
+  background-color: white;
   color: black;
 }
-/* header */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+body.dark-mode {
+  background-color: #1A1A1A;
+  color: #F5F5F5;
+}
+
+body.dark-mode .navbar {
+  background-color: #1A1A1A;
+}
+
+body.dark-mode .navbar-nav .nav-link, body.dark-mode .display-6, body.dark-mode nav .navbar-toggler, body.dark-mode .contact-information a, body.dark-mode .socials-link a {
+  color: white;
+}
+
+nav {
   background-color: white;
   padding: 20px 30px;
   height: 100px;
 }
-/* nav .container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-} */
-nav .display-5 {
+nav .display-6 {
   text-decoration: none;
   color: black;
   font-weight: 800;
   font-family: 'Libre Baskerville';
 }
-.navbar-nav .nav-link {
+.navbar-nav {
+  margin-top: 40px;
+  font-family: 'Karla', 'Times New Roman', Times, serif;
+  font-weight: 400;
+}
+.navbar-nav .nav-item .nav-link {
+  color: white;
   font-size: 20px;
-  font-weight: 700;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
-.navbar-nav .nav-link.active {
-  padding: 10px;
-  border-bottom:  5px solid black;
+
+.navbar-nav .nav-item .nav-link:hover {
+ text-decoration: underline;
+ text-transform: capitalize;
+ font-weight: 600;
 }
+
+.navbar-nav .nav-item .nav-link:active {
+  color: #00000000;
+}
+
 .navbar-toggler, .navbar-toggler:focus, .navbar-toggler:active {
   border: none;
   background-color: transparent;
   outline: none;
   box-shadow: none;
+}
+nav .navbar-toggler {
+  position: relative;
+  z-index: 1000;
   color: black;
 }
+.navbar-toggler.toggled, .theme-icon.toggled {
+  color: white;
+  margin-top: 20px;
+}
 
+.navbar-nav .nav-item .nav-link {
+  color: white;
+  font-size: 20px;
+}
+.navbar-collapse {
+  width: 20%;
+  background-color: black;
+  position: absolute;
+  right: 100px;
+  top: 30px;
+  padding: 20px;
+  transition: background-color 0.3s ease;
+}
+.theme-icon {
+  outline: none;
+  background: none;
+  border: none;
+}
 #home {
   text-align: left;
   font-family: 'Libre Baskerville';
@@ -68,32 +112,36 @@ nav .display-5 {
   }
 }
 
-.see-more-btn {
+.about-btn, .get-resume-btn {
   text-decoration: none;
-  color: #333;;
+  background-color: black;
+  padding: 15px;
+  border-radius: 50px;
+  color: white;
   cursor: pointer;
-  font-size: 18px;
-  transition: all 0.2s;
+  transition: all 0.3s ease-in-out;
+  width: 180px;
   display: flex;
   align-items: center;
-  width: 240px;
+  justify-content: space-evenly;
   font-family: 'Karla', 'Times New Roman', Times, serif;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
-.see-more-btn:hover {
-  font-weight: 900;
-  text-transform: uppercase;
+
+.about-btn:hover, .get-resume-btn:hover {
+  background-color: #1A1A1A;
+  transform: scale(1.05);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.about-btn:active, .get-resume-btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .about-btn, body.dark-mode .get-resume-btn {
+  background-color: #ffffff;
   color: black;
-  text-decoration: underline;
-}
-
-.see-more-btn > svg {
-  width: 34px;
-  margin-left: 10px;
-  transition: transform 0.3s ease-in-out;
-}
-
-.see-more-btn:hover svg {
-  transform: translateX(5px);
 }
 
 .display-4 {
@@ -101,30 +149,6 @@ nav .display-5 {
   font-weight: 800;
 }
 
-@keyframes slideInFromLeft {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes colorShift {
-  0% {
-    color: #0c0b0b;
-  }
-  50% {
-    color: #293a29;
-  }
-  100% {
-    color: #000000;
-  }
-}
-
-#about .display-4, #projects .display-4, #contact .display-4 {
-  animation: slideInFromLeft 2s linear, colorShift 10s linear infinite;
-}
 
 #home h5, #home h4, a {
   font-family: 'Karla', 'Times New Roman', Times, serif;
@@ -140,7 +164,7 @@ nav .display-5 {
   text-decoration: none;
   cursor: pointer;
   color: black;
-  transition: transform 0.3s ease; /* Smooth transition */
+  transition: transform 0.3s ease;
 }
 
 .socials-link a:hover {
@@ -192,8 +216,16 @@ nav .display-5 {
   height: 380px;
   position: relative;
   overflow: hidden;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  background-color: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
 .card > img {
   width: 100%;
   object-fit: cover;
@@ -205,19 +237,15 @@ nav .display-5 {
   bottom: 0;
   left: 0;
   right: 0;
-  top: 0;
   padding: 30px;
-  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  background-color: rgba(0, 0, 0, 0.6);
   color: white;
   text-align: justify;
   display: flex;
-  align-items: center;
   flex-direction: column;
-  justify-content: center;
 }
-
 .card:hover .card-body {
-  opacity: 1; /* Show content when card is hovered */
+  opacity: 1;
 }
 
 footer {

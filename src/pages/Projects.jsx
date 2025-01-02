@@ -8,15 +8,24 @@ const Projects = () => {
   return (
     <section id='projects' className='p-5 mt-5'>
         <div className='container p-5 mt-5'>
-            <p className='display-4'>PROJECTS</p>
+            <p className='display-4 text-center'>PROJECTS</p>
             <div className='row'>
                 <div className="col-md-6">
                     <ProjectCard
                         imgSrc={project3}
-                        title="Little Lemon Booking Page"
-                        text="This Little Lemon Booking Page is a responsive web application developed as part of the Meta Front-End Developer course.
-                        It allows users to view available reservation times and make bookings seamlessly across devices."
-                        tech="HTML, CSS, JavaScript, React"
+                        title="Jobify: Job Application Tracker"
+                        text="A full-stack web application designed to simplify the job-hunting process by keeping track of job applications in an organized and efficient manner."
+                        tech="HTML, CSS, JavaScript, Django"
+                        link="#"
+                    />
+                </div>
+                <div className="col-md-6">
+                    <ProjectCard
+                        imgSrc={project2}
+                        title="SignSense: Real Time Traffic Sign Detection with Voice Alert System and Temporal Data Integration"
+                        text="An Android application for real-time traffic sign detection, using machine learning to identify road signs,
+                        a voice alert system for notifications, and a distance estimation algorithm to enhance driver safety."
+                        tech="Android Development (Kotlin), Python, TensorFlow Lite, OpenCV"
                         link="#"
                     />
                 </div>
@@ -27,17 +36,6 @@ const Projects = () => {
                         text="This Little Lemon Booking Page is a responsive web application developed as part of the Meta Front-End Developer course.
                         It allows users to view available reservation times and make bookings seamlessly across devices."
                         tech="HTML, CSS, JavaScript, React"
-                        link="#"
-                    />
-                </div>
-                <div className="col-md-6">
-                    <ProjectCard
-                        imgSrc={project2}
-                        title="SignSense: Real Time Traffic Sign Detection with Voice Alert System and Temporal Data Integration"
-                        text="This project was the focus of my undergraduate thesis and is an Android application developed to detect traffic signs in real-time
-                        using the device's camera. It utilizes a machine learning model to recognize different road signs, incorporates a voice alert system,
-                        and includes a distance estimation algorithm, all aimed at delivering essential information to drivers to promote safer driving."
-                        tech="Android Development (Kotlin), Python, TensorFlow Lite, OpenCV"
                         link="#"
                     />
                 </div>

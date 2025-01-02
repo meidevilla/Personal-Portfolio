@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer>
         <div className='container d-flex flex-row justify-content-between align-items-center'>
-            <h6>© 2024 Angelica Mei De Villa. All rights reserved.</h6>
+            <h6>© 2025 Angelica Mei De Villa. All rights reserved.</h6>
             <div className='socials-container'>
                 <a href='https://www.linkedin.com/in/meidevilla/' target="_blank">
                     <FaLinkedinIn size={30}/>
